@@ -1,3 +1,16 @@
-lora/
+# Models & large artifacts
+*.onnx
+*.plan
+*.safetensors
+*.ckpt
+*.pth
+*.bin
 
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual env
 venv/
+lora/
