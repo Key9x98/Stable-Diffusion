@@ -1,5 +1,7 @@
-
 # Chuyển Stable Diffusion sang TensorRT
+
+## Trạng thái dự án
+Dự án đã **thành công convert Stable Diffusion sang TensorRT**, nhưng gặp **lỗi khi sinh ảnh xám** (gray image).
 
 ## Link tài nguyên
 - Google Drive chứa model: [Link](https://drive.google.com/drive/folders/1pDcYanTodx5XeG8bebcS91jU5iS1g4DV?usp=sharing)  
@@ -9,7 +11,7 @@
 ```bash
 python -m optimum.exporters.onnx --model runwayml/stable-diffusion-v1-5 onnx_model/
 ````
-hoặc chạy file export_onnx.py
+### Hoặc chạy file export_onnx.py
 ## Chuyển ONNX sang TensorRT
 
 ### UNet
@@ -35,3 +37,4 @@ trtexec --onnx=onnx_model/vae_encoder/model.onnx --saveEngine=trt_models/vae_enc
 ```bash
 trtexec --onnx=onnx_model/vae_decoder/model.onnx --saveEngine=trt_models/vae_decoder_fp16.plan --fp16 --shapes=latent_sample:1x4x64x64
 ```
+
