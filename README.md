@@ -1,0 +1,14 @@
+export onnx model:
+python -m optimum.exporters.onnx --model runwayml/stable-diffusion-v1-5 onnx_model/
+
+convert unet onnx model to tensorRT:
+trtexec --onnx=onnx_model/unet/model.onnx --saveEngine=trt_models/unet_fp16.plan --fp16 --shapes=sample:1x4x64x64,timestep:scalar,encoder_hidden_states:1x77x768
+
+convert text encoder model to tensorRT:
+trtexec --onnx=onnx_model/text_encoder/model.onnx --saveEngine=trt_models/text_encoder_fp16.plan --fp16 --shapes=input_ids:1x77
+
+convert vae_encoder model to tensorRT:
+trtexec --onnx=onnx_model/vae_encoder/model.onnx --saveEngine=trt_models/vae_encoder_fp16.plan --fp16 --shapes=sample:1x3x512x512
+
+convert vae_decoder model to tensorRT:
+trtexec --onnx=onnx_model/vae_decoder/model.onnx --saveEngine=trt_models/vae_decoder_fp16.plan --fp16 --shapes=latent_sample:1x4x64x64
