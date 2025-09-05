@@ -1,6 +1,4 @@
-Dưới đây là phiên bản **README.md bằng tiếng Việt**, giữ nội dung ngắn gọn như gốc nhưng format rõ ràng, dễ đọc:
 
-````markdown
 # Chuyển Stable Diffusion sang TensorRT
 
 ## Link tài nguyên
@@ -11,7 +9,7 @@ Dưới đây là phiên bản **README.md bằng tiếng Việt**, giữ nội 
 ```bash
 python -m optimum.exporters.onnx --model runwayml/stable-diffusion-v1-5 onnx_model/
 ````
-
+hoặc chạy file export_onnx.py
 ## Chuyển ONNX sang TensorRT
 
 ### UNet
