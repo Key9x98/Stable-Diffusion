@@ -6,6 +6,9 @@
 *.pth
 *.bin
 
+*.npy
+*.json
+
 # Python cache
 __pycache__/
 *.pyc

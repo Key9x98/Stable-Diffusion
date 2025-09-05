@@ -6,7 +6,7 @@ model_id = "runwayml/stable-diffusion-v1-5"
 
 pipe = StableDiffusionPipeline.from_pretrained(model_id, torch_type=torch.float16, device = device)
 
-prompt = "a photo of a futuristic city at sunset, ultra realistic"
+prompt = "A cute fluffy cat sitting on a pillow, midjourney style, highly detailed, soft lighting"
 start = time.time()
 image = pipe(prompt).images[0]
 end = time.time()
